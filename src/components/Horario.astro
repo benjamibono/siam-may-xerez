@@ -1,4 +1,4 @@
-<div id="horario" class="container  py-32 mx-auto min-w-full">
+<div id="horario" class="container py-32 mx-auto min-w-full">
   <div class="rectangle text-white uppercase"></div>
 </div>
 
@@ -16,13 +16,19 @@
     background-image: url("/horario.webp");
     background-size: cover;
     background-position: center;
-    height: 400px;
-    width: 800px;
+    height: 675px;
+    width: 1200px;
   }
 
+  @media (max-width: 1024px) {
+    .rectangle {
+      height: 405px;
+      width: 720px;
+    }
+  }
   @media (max-width: 640px) {
     .rectangle {
-      height: 220px;
+      height: 225px;
       width: 400px;
     }
   }
