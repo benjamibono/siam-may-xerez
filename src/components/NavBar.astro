@@ -1,16 +1,15 @@
-<nav class="navbar">
-  <div class="logo ml-10">
-    <img class="transition hover:scale-110 " src="/logo.webp" alt="Logo" />
+<nav class="navbar md:sticky top-0 py-2">
+  <div class="logo mx-auto">
+    <img class="transition hover:scale-110" src="/logo.webp" alt="Logo" />
   </div>
-  <div class="text-white space-x-10 mr-10 ">
-    <a class="hover:scale-150" href="#">Inicio</a>
-    <a class="" href="#">Instalaciones</a>
-    <a class="" href="#">Galería</a>
-    <a class="" href="#">About</a>
-    <a class="" href="#">Horarios</a>
-    <a class="" href="#">Precios</a>
-    <a class="" href="#">Contacto</a>
-  </div>
+  <ul class="text-white text-xl space-x-10 mx-auto hidden md:flex">
+    <li><a class="" href="#">Inicio</a></li>
+    <li><a class="" href="#">About</a></li>
+    <li><a class="" href="#">Horarios</a></li>
+    <li><a class="" href="#">Instalaciones</a></li>
+    <li><a class="" href="#">Galería</a></li>
+    <li><a class="" href="#">Contacto</a></li>
+  </ul>
 </nav>
 
 <style>
@@ -20,10 +19,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
   }
 
   .logo img {
     width: 120px;
   }
+  @media (max-width: 768px) {
+    .logo img {
+      width: 80px;
+    }
+  }
+
+  li:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  
 </style>
