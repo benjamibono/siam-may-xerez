@@ -1,72 +1,28 @@
 <div id="galeria" class="pt-10 xs:pt-32 pb-5 xs:pb-10 px-4 sm:px-16">
-  <h2 class="flex justify-center pb-6 font-semibold text-3xl">Galería</h2>
+  <h3 class="flex justify-center pb-6 font-semibold text-balance text-center md:text-3xl">
+    "La verdadera batalla está en superarte a ti mismo cada día"
+  </h3>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="thai3.webp"
-        decoding="async"
-        loading="lazy"
-        title="sillon de dentista"
-        alt="sillon de dentista"
-      />
-    </div>
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="/thai2.webp"
-        decoding="async"
-        loading="lazy"
-        title="sala de espera"
-        alt="sala de espera"
-      />
-    </div>
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="/ej1.webp"
-        decoding="async"
-        loading="lazy"
-        title="esterilizacion"
-        alt="esterilizacion"
-      />
-    </div>
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="/ej4.webp"
-        decoding="async"
-        loading="lazy"
-        title="instrumentos"
-        alt="instrumentos"
-      />
-    </div>
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="/ej5.webp"
-        decoding="async"
-        loading="lazy"
-        title="ultrasonido"
-        alt="ultrasonido"
-      />
-    </div>
-    <div class="overflow-hidden rounded-lg">
-      <img height="200"
-      width="300"
-        class="zoom"
-        src="/ej6.webp"
-        decoding="async"
-        loading="lazy"
-        title="radiografia"
-        alt="radiografia"
-      />
-    </div>
+    {
+      [
+        { src: "thai3.webp" },
+        { src: "/thai2.webp" },
+        { src: "/ej1.webp" },
+        { src: "/ej4.webp" },
+        { src: "/ej5.webp" },
+        { src: "/ej6.webp" },
+      ].map((image) => (
+        <div class="overflow-hidden rounded-lg">
+          <img
+            class="zoom object-cover w-full h-full"
+            src={image.src}
+            decoding="async"
+            loading="lazy"
+            style="aspect-ratio: 1 / 1;"
+          />
+        </div>
+      ))
+    }
   </div>
 </div>
 
@@ -81,6 +37,6 @@
   }
 
   .zoom:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 </style>

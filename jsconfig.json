@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    // ...existing code...
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"]
+    }
+    // ...existing code...
+  }
+}

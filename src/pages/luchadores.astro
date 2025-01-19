@@ -1,0 +1,45 @@
+---
+
+import Layout from "@/layouts/Layout.astro";
+import Navbar from '@components/NavBar.astro';
+import Footer from '@components/Footer.astro';
+
+const luchadores = [
+  { nombre: 'Nombre', peso: '70kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '75kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '80kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '85kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '90kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '95kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '100kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+  { nombre: 'Nombre', peso: '105kg', foto: '/rodtang.webp' },
+];
+---
+<Layout title="Siam May Xerez | Gimnasio de Muay Thai en Jerez">
+<Navbar />
+
+<section class="p-5">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+    {luchadores.map(luchador => (
+      <div class="border border-gray-300 rounded-lg p-2 text-center">
+        <img src={luchador.foto} alt={luchador.nombre} class="w-full h-auto rounded-lg" />
+        <h3 class="mt-2 text-lg font-semibold">{luchador.nombre}</h3>
+        <p class="text-gray-600">{luchador.peso}</p>
+      </div>
+    ))}
+  </div>
+</section>
+<Footer />
+</Layout>

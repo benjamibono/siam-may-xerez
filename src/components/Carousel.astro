@@ -1,0 +1,54 @@
+---
+const words = [
+  "Disciplina",
+  "Respeto",
+  "Fuerza",
+  "Confianza",
+  "Valor",
+  "Familia",
+  "Superación",
+  "Energía",
+  "Pasión",
+  "Coraje",
+];
+---
+
+<div class="carousel">
+  <div class="carousel-track py-10 text-xl uppercase">
+    {words.map((word) => <div class="carousel-item">{word}</div>)}
+    {words.map((word) => <div class="carousel-item">{word}</div>)}
+  </div>
+</div>
+
+<style>
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100vw;
+  }
+
+  .carousel-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 0 1vw;
+    text-align: center;
+    margin-right: 2vw;
+    font-size: 4rem; /* Tamaño de letra grande */
+    font-weight: bold; /* Negrita */
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 2vw * {words.length}));
+      transform: translateX(-100%);
+    }
+  }
+</style>

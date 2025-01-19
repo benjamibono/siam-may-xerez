@@ -23,23 +23,17 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="mx-auto min-h-screen max-w-6xl md:max-w-full">
+    <div class="mx-auto min-h-screen">
       <slot />
     </div>
   </body>
 </html>
 <style is:global>
-  :root {
-    --color-primary: #000;
-    --color-secondary: rgb(255, 0, 0);
-    --background-color: #ffffff;
-  }
   html {
     font-family: "Montserrat Variable", system-ui, sans-serif;
     scrollbar-gutter: stable;
-    background-color: var(--background-color);
   }
   body {
-    color: var(--color-primary);
+    overflow-x: hidden;
   }
 </style>
