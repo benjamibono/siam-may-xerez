@@ -1,7 +1,7 @@
 <nav id="navbar" class="bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300">
   <div class="flex mx-auto space-x-2">
     <img
-      class="xs:transition xs:hover:scale-110 animate-tilt w-24 md:w-20 py-2"
+      class="xs:transition xs:hover:scale-110 animate-tilt w-14 md:w-20 py-2"
       src="/logo.webp"
       alt="Logo Muay Thai"
     />
@@ -52,10 +52,12 @@
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-      navbar.style.transform = 'translateY(-100%)';
-    } else {
-      navbar.style.transform = 'translateY(0)';
+    if (window.innerWidth >= 768) { // Disable on mobile (width < 768px)
+      if (scrollTop > lastScrollTop) {
+        navbar.style.transform = 'translateY(-100%)';
+      } else {
+        navbar.style.transform = 'translateY(0)';
+      }
     }
     lastScrollTop = scrollTop;
   });
