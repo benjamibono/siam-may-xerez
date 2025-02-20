@@ -1,20 +1,27 @@
+---
+const categories = [
+  { title: "Entrenadores", foto: "/entrenadores.jpg" },
+  { title: "Luchadores", foto: "/luchadores.jpg" },
+];
+---
+
 <div class="flex flex-col md:flex-row justify-center mt-8">
   {
-    ["Entrenadores", "Luchadores"].map((title) => (
+    categories.map((category) => (
       <div class="w-full p-4">
         <a
-          href={`/${title.toLowerCase()}`}
+          href={`/${category.title.toLowerCase()}`}
           class="relative flex items-center justify-center text-white text-2xl font-bold rounded-lg uppercase"
         >
           <div class="overflow-hidden rounded-lg">
             <img
-              src="/rodtang.webp"
-              alt={title}
-              class="object-contain w-full h-auto transform transition-transform duration-300 ease-in-out hover:scale-105"
+              src={category.foto}
+              alt={category.title}
+              class="object-contain max-h-[456px] max-w-[600px] h-auto transform transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </div>
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <h3>{title}</h3>
+            <h3>{category.title}</h3>
           </div>
         </a>
       </div>
