@@ -17,7 +17,7 @@
   </div>
   <ul class="text-white space-x-6 lg:space-x-10 mx-auto hidden md:flex">
     <li class=""><a href="/">Inicio</a></li>
-    <li class=""><a href="/nosotros">Nosotros</a></li>
+    <li class=""><a href="/nosotros">Conócenos</a></li>
     <li class=""><a href="/horario">Horario</a></li>
     <li class=""><a href="/entrenadores">Entrenadores</a></li>
     <li class=""><a href="/luchadores">Luchadores</a></li>
@@ -54,11 +54,16 @@
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (window.innerWidth >= 768) { // Disable on mobile (width < 768px)
-      if (scrollTop > lastScrollTop) {
-        navbar.style.transform = 'translateY(-100%)';
-      } else {
-        navbar.style.transform = 'translateY(0)';
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    if (scrollHeight > clientHeight + 100) { // Only activate if there's a lot to scroll
+      if (window.innerWidth >= 768) { // Disable on mobile (width < 768px)
+        if (scrollTop > lastScrollTop) {
+          navbar.style.transform = 'translateY(-100%)';
+        } else {
+          navbar.style.transform = 'translateY(0)';
+        }
       }
     }
     lastScrollTop = scrollTop;
