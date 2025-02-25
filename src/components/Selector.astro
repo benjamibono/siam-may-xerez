@@ -1,14 +1,14 @@
 ---
 const categories = [
-  { title: "Entrenadores", foto: "/entrenadores.jpg" },
-  { title: "Luchadores", foto: "/luchadores.jpg" },
+  { title: "Entrenadores", foto: "/entrenadores.webp" },
+  { title: "Luchadores", foto: "/luchadores.webp" },
 ];
 ---
 
 <div class="flex flex-col md:flex-row justify-center mt-8">
   {
     categories.map((category) => (
-      <div class="w-full p-4">
+      <div class="w-full px-2 sm:px-0 sm:mx-4 my-1">
         <a
           href={`/${category.title.toLowerCase()}`}
           class="relative flex items-center justify-center text-white text-2xl font-bold rounded-lg uppercase"
@@ -17,7 +17,7 @@ const categories = [
             <img
               src={category.foto}
               alt={category.title}
-              class="object-contain max-h-[456px] max-w-[600px] h-auto transform transition-transform duration-300 ease-in-out hover:scale-105"
+              class="justify-center object-cover transform transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </div>
           <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -28,3 +28,8 @@ const categories = [
     ))
   }
 </div>
+<style>
+  a {
+    cursor: url("/cursor.png"), auto;
+  }
+</style>

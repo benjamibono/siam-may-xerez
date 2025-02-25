@@ -1,4 +1,4 @@
-<nav id="navbar" class="bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300">
+<nav id="navbar" class=" bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300">
   <div class="flex mx-auto space-x-2">
     <a href="/">
       <img
@@ -16,12 +16,12 @@
     -->
   </div>
   <ul class="text-white space-x-6 lg:space-x-10 mx-auto hidden md:flex">
-    <li class=""><a href="/">Inicio</a></li>
-    <li class=""><a href="/nosotros">Conócenos</a></li>
-    <li class=""><a href="/horario">Horario</a></li>
-    <li class=""><a href="/entrenadores">Entrenadores</a></li>
-    <li class=""><a href="/luchadores">Luchadores</a></li>
-    <li class=""><a href="/contacto">Contacto</a></li>
+    <li class="transition hover:text-red-500"><a href="/">Inicio</a></li>
+    <li class="transition hover:text-red-500"><a href="/nosotros">Conócenos</a></li>
+    <li class="transition hover:text-red-500"><a href="/horario">Horario</a></li>
+    <li class="transition hover:text-red-500"><a href="/entrenadores">Entrenadores</a></li>
+    <li class="transition hover:text-red-500"><a href="/luchadores">Luchadores</a></li>
+    <li class="transition hover:text-red-500"><a href="/contacto">Contacto</a></li>
   </ul>
   <button class="block rounded bg-black p-2.5 text-white transition md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
     <span class="sr-only">Toggle menu</span>
@@ -38,12 +38,12 @@
   </button>
   <div id="mobile-menu" class="absolute right-0 bg-white mt-72 z-20 w-48 shadow-lg rounded-md hidden">
     <ul class="flex flex-col items-start gap-4 text-base text-[#2e211c] p-4">
-      <li><a class="transition hover:text-gray-500/75" href="/">Inicio</a></li>
-      <li><a class="transition hover:text-gray-500/75" href="/nosotros">Nosotros</a></li>
-      <li><a class="transition hover:text-gray-500/75" href="/horario">Horario</a></li>
-      <li><a class="transition hover:text-gray-500/75" href="/entrenadores">Entrenadores</a></li>
-      <li><a class="transition hover:text-gray-500/75" href="/luchadores">Luchadores</a></li>
-      <li><a class="transition hover:text-gray-500/75" href="/contacto">Contacto</a></li>
+      <li><a class="transition hover:text-red-500" href="/">Inicio</a></li>
+      <li><a class="transition hover:text-red-500" href="/nosotros">Nosotros</a></li>
+      <li><a class="transition hover:text-red-500" href="/horario">Horario</a></li>
+      <li><a class="transition hover:text-red-500" href="/entrenadores">Entrenadores</a></li>
+      <li><a class="transition hover:text-red-500" href="/luchadores">Luchadores</a></li>
+      <li><a class="transition hover:text-red-500" href="/contacto">Contacto</a></li>
     </ul>
   </div>
 </nav>
@@ -69,3 +69,8 @@
     lastScrollTop = scrollTop;
   });
 </script>
+<style>
+  a {
+    cursor: url('/cursor.png'), auto;
+  }
+</style>
