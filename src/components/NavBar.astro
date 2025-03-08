@@ -1,7 +1,9 @@
 ---
-import {Image} from 'astro:assets'; import logo from '../../public/logo.webp';
-import mma from '../../public/MMA.webp';
+import { Image } from "astro:assets";
+import logo from "../../public/logo.webp";
+import mma from "../../public/MMA2.webp";
 ---
+
 <nav
   id="navbar"
   class="bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300"
@@ -12,10 +14,10 @@ import mma from '../../public/MMA.webp';
         class="xs:transition xs:hover:scale-110 animate-tilt w-14 md:w-20 py-2 rounded-full"
         src={mma}
         alt="Logo Siam May Xerez | Muay Thai"
-        width={80}
-        height={80}
+        width={84}
+        height={84}
         format="webp"
-        quality={80}
+        quality={100}
       />
     </a>
     <!--
@@ -81,11 +83,13 @@ import mma from '../../public/MMA.webp';
       </li>
       <li>
         <a class="transition hover:text-red-500" href="/entrenadores"
-          >Entrenadores</a>
+          >Entrenadores</a
+        >
       </li>
       <li>
         <a class="transition hover:text-red-500" href="/luchadores"
-          >Luchadores</a>
+          >Luchadores</a
+        >
       </li>
       <li>
         <a class="transition hover:text-red-500" href="/contacto">Contacto</a>
