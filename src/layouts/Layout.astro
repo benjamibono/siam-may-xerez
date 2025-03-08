@@ -20,6 +20,20 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href="https://siam-may-thai.vercel.app/" />
     <link rel="icon" href="/favicon.svg" type="image/x-icon" />
+    <link
+      rel="preload"
+      as="image"
+      href="/blur.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/cursor.png"
+      type="image/png"
+      fetchpriority="high"
+    />
     <title>{title}</title>
   </head>
   <body>
@@ -32,9 +46,32 @@ const { title } = Astro.props;
   html {
     font-family: "Montserrat Variable", system-ui, sans-serif;
     scrollbar-gutter: stable;
-    cursor: url('/cursor.png'), auto;
+    cursor:
+      url("/cursor.png") 0 0,
+      auto;
   }
   body {
     overflow-x: hidden;
+  }
+
+  /* Estilos para imágenes de fondo */
+  [class*="bg-[url('/blur.webp')]"]::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+  }
+
+  [class*="bg-[url('/flag-thailand.jpg')]"]::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
   }
 </style>

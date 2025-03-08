@@ -7,7 +7,9 @@ import Navbar from "@components/NavBar.astro";
 <Layout title="Siam May Xerez | Gimnasio de Muay Thai en Jerez">
   <Navbar />
   <div
-    class="h-screen mx-auto p-4 flex flex-col md:py-52 items-center bg-[url('/flag-thailand.jpg')] bg-cover bg-center"
+    class="h-screen mx-auto p-4 flex flex-col md:py-52 items-center bg-[url('/flag-thailand.webp')] bg-cover bg-center"
+    role="img"
+    aria-label="Fondo con la bandera de Tailandia"
   >
     <h1 class="text-xl py-10 font-semibold">Horario de Clases</h1>
     <div class="flex justify-center w-full md:h-4/5">
@@ -82,8 +84,12 @@ import Navbar from "@components/NavBar.astro";
         <thead class="bg-gray-200">
           <tr>
             <th class="border border-gray-300 px-4 py-2 w-1/6 xs:w-1/3">Día</th>
-            <th class="border border-gray-300 px-4 py-2 w-1/6 xs:w-1/3">Clase</th>
-            <th class="border border-gray-300 px-4 py-2 w-4/6 xs:w-1/3">Horario</th>
+            <th class="border border-gray-300 px-4 py-2 w-1/6 xs:w-1/3"
+              >Clase</th
+            >
+            <th class="border border-gray-300 px-4 py-2 w-4/6 xs:w-1/3"
+              >Horario</th
+            >
           </tr>
         </thead>
         <tbody>
@@ -93,7 +99,7 @@ import Navbar from "@components/NavBar.astro";
             >
             <td class="border border-gray-300 px-4 py-2">Muay Thai</td>
             <td class="border border-gray-300 px-4 py-2"
-              >10:00 - 11:30 <br> 18:00 - 22:00 <br /> 1h x clase
+              >10:00 - 11:30 <br /> 18:00 - 22:00 <br /> 1h x clase
             </td>
           </tr>
           <tr class="bg-white">

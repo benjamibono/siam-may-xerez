@@ -1,29 +1,57 @@
-<nav id="navbar" class=" bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300">
+---
+import {Image} from 'astro:assets'; import logo from '../../public/logo.webp';
+import mma from '../../public/MMA.webp';
+---
+<nav
+  id="navbar"
+  class="bg-black sticky top-0 z-10 flex justify-between items-center w-full transition-transform duration-300"
+>
   <div class="flex mx-auto space-x-2">
     <a href="/">
-      <img
-      class="xs:transition xs:hover:scale-110 animate-tilt w-14 md:w-20 py-2"
-      src="/logo.webp"
-      alt="Logo Muay Thai"
+      <Image
+        class="xs:transition xs:hover:scale-110 animate-tilt w-14 md:w-20 py-2 rounded-full"
+        src={mma}
+        alt="Logo Siam May Xerez | Muay Thai"
+        width={80}
+        height={80}
+        format="webp"
+        quality={80}
       />
     </a>
     <!--
-    <img
+    <Image
       class="xs:transition xs:hover:scale-110 animate-tilt w-24 md:w-20"
-      src="/MMA.webp"
+      src={mma}
       alt="Logo MMA"
+      width={80}
+      height={80}
+      format="webp"
+      quality={80}
     />
     -->
   </div>
   <ul class="text-white space-x-6 lg:space-x-10 mx-auto hidden md:flex">
     <li class="transition hover:text-red-500"><a href="/">Inicio</a></li>
-    <li class="transition hover:text-red-500"><a href="/nosotros">Conócenos</a></li>
-    <li class="transition hover:text-red-500"><a href="/horario">Horario</a></li>
-    <li class="transition hover:text-red-500"><a href="/entrenadores">Entrenadores</a></li>
-    <li class="transition hover:text-red-500"><a href="/luchadores">Luchadores</a></li>
-    <li class="transition hover:text-red-500"><a href="/contacto">Contacto</a></li>
+    <li class="transition hover:text-red-500">
+      <a href="/nosotros">Conócenos</a>
+    </li>
+    <li class="transition hover:text-red-500">
+      <a href="/horario">Horario</a>
+    </li>
+    <li class="transition hover:text-red-500">
+      <a href="/entrenadores">Entrenadores</a>
+    </li>
+    <li class="transition hover:text-red-500">
+      <a href="/luchadores">Luchadores</a>
+    </li>
+    <li class="transition hover:text-red-500">
+      <a href="/contacto">Contacto</a>
+    </li>
   </ul>
-  <button class="block rounded bg-black p-2.5 text-white transition md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+  <button
+    class="block rounded bg-black p-2.5 text-white transition md:hidden"
+    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+  >
     <span class="sr-only">Toggle menu</span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,36 +61,56 @@
       stroke="currentColor"
       stroke-width="2"
     >
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4 6h16M4 12h16M4 18h16"></path>
     </svg>
   </button>
-  <div id="mobile-menu" class="absolute right-0 bg-white mt-72 z-20 w-48 shadow-lg rounded-md hidden">
+  <div
+    id="mobile-menu"
+    class="absolute right-0 bg-white mt-72 z-20 w-48 shadow-lg rounded-md hidden"
+  >
     <ul class="flex flex-col items-start gap-4 text-base text-[#2e211c] p-4">
       <li><a class="transition hover:text-red-500" href="/">Inicio</a></li>
-      <li><a class="transition hover:text-red-500" href="/nosotros">Nosotros</a></li>
-      <li><a class="transition hover:text-red-500" href="/horario">Horario</a></li>
-      <li><a class="transition hover:text-red-500" href="/entrenadores">Entrenadores</a></li>
-      <li><a class="transition hover:text-red-500" href="/luchadores">Luchadores</a></li>
-      <li><a class="transition hover:text-red-500" href="/contacto">Contacto</a></li>
+      <li>
+        <a class="transition hover:text-red-500" href="/nosotros">Nosotros</a>
+      </li>
+      <li>
+        <a class="transition hover:text-red-500" href="/horario">Horario</a>
+      </li>
+      <li>
+        <a class="transition hover:text-red-500" href="/entrenadores"
+          >Entrenadores</a>
+      </li>
+      <li>
+        <a class="transition hover:text-red-500" href="/luchadores"
+          >Luchadores</a>
+      </li>
+      <li>
+        <a class="transition hover:text-red-500" href="/contacto">Contacto</a>
+      </li>
     </ul>
   </div>
 </nav>
 
 <script>
   let lastScrollTop = 0;
-  const navbar = document.getElementById('navbar');
+  const navbar = document.getElementById("navbar");
 
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    if (scrollHeight > clientHeight + 100) { // Only activate if there's a lot to scroll
-      if (window.innerWidth >= 768) { // Disable on mobile (width < 768px)
+    if (scrollHeight > clientHeight + 100) {
+      // Only activate if there's a lot to scroll
+      if (window.innerWidth >= 768) {
+        // Disable on mobile (width < 768px)
         if (scrollTop > lastScrollTop) {
-          navbar.style.transform = 'translateY(-100%)';
+          navbar.style.transform = "translateY(-100%)";
         } else {
-          navbar.style.transform = 'translateY(0)';
+          navbar.style.transform = "translateY(0)";
         }
       }
     }
@@ -71,6 +119,6 @@
 </script>
 <style>
   a {
-    cursor: url('/cursor.png'), auto;
+    cursor: url("/cursor.png"), auto;
   }
 </style>

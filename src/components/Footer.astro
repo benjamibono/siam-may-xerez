@@ -1,3 +1,9 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/logo.webp";
+import mma from "../../public/MMA.webp";
+---
+
 <footer class="bg-black">
   <div
     class="relative mx-auto max-w-screen-xl px-4 py-10 sm:px-6 lg:px-8 lg:pt-18"
@@ -5,8 +11,28 @@
     <div class="lg:flex lg:items-end lg:justify-between">
       <div>
         <div class="flex justify-evenly">
-          <img src="/logo.webp" class="w-20" alt="" />
-          <img src="/MMA.webp" class="w-20 rounded-full" alt="" />
+          <!--
+          <Image
+            src={logo}
+            class="w-20"
+            alt="Logo de Siam May Thai"
+            width={80}
+            height={80}
+            format="webp"
+            quality={80}
+          />
+          -->
+          <a href="/" aria-label="Ir a la página principal de Siam May Xerez">
+            <Image
+              src={mma}
+              class="w-20 rounded-full"
+              alt="Logo de Siam May Xerez | Muay Thai y MMA"
+              width={80}
+              height={80}
+              format="webp"
+              quality={80}
+            />
+          </a>
         </div>
 
         <p
@@ -22,8 +48,9 @@
       >
         <li>
           <a
-            class="text-white transition hover:text-white/75"
+            class="text-white transition hover:text-white/75 flex items-center gap-2"
             href="tel:+34638827871"
+            aria-label="Llamar al teléfono del gimnasio: 638 82 78 71"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -36,10 +63,13 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-phone transition duration-500 transform hover:scale-110 hover:text-yellow-500"
+              role="img"
+              aria-hidden="true"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
               ></path></svg
             >
+            <span class="sr-only">638 82 78 71</span>
           </a>
         </li>
         <li>
@@ -47,7 +77,8 @@
             href="https://wa.me/34638827871"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-white transition hover:text-white/75"
+            class="text-white transition hover:text-white/75 flex items-center gap-2"
+            aria-label="Contactar por WhatsApp al 638 82 78 71"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,20 +91,24 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp transition duration-500 transform hover:scale-110 hover:text-green-500"
+              role="img"
+              aria-hidden="true"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path
                 d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
               ></path></svg
             >
+            <span class="sr-only">WhatsApp</span>
           </a>
         </li>
 
         <li>
           <a
-            class="text-white transition hover:text-white/75"
+            class="text-white transition hover:text-white/75 flex items-center gap-2"
             href="https://www.instagram.com/siammayxerez"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Síguenos en Instagram @siammayxerez"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,16 +121,23 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-brand-instagram transition duration-500 transform hover:scale-110 hover:text-pink-500"
+              role="img"
+              aria-hidden="true"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
               ></path><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path><path
                 d="M16.5 7.5v.01"></path></svg
             >
+            <span class="sr-only">Instagram</span>
           </a>
         </li>
 
         <li>
-          <a class="text-white transition hover:text-white/75" href="/horario">
+          <a
+            class="text-white transition hover:text-white/75 flex items-center gap-2"
+            href="/horario"
+            aria-label="Consulta nuestros horarios de clases"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -107,18 +149,25 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-calendar-clock transition duration-500 transform hover:scale-110 hover:text-blue-500"
+              role="img"
+              aria-hidden="true"
               ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
                 d="M10.5 21h-4.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v3"
               ></path><path d="M16 3v4"></path><path d="M8 3v4"></path><path
                 d="M4 11h10"></path><path
                 d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path><path
                 d="M18 16.5v1.5l.5 .5"></path></svg
-            ></a
-          >
+            >
+            <span class="sr-only">Horarios</span>
+          </a>
         </li>
 
         <li>
-          <a class="text-white transition hover:text-white/75" href="/contacto">
+          <a
+            class="text-white transition hover:text-white/75"
+            href="/contacto"
+            aria-label="Página de contacto y ubicación"
+          >
             Contacto
           </a>
         </li>
@@ -126,7 +175,15 @@
     </div>
 
     <p class="mt-12 text-center text-sm text-white lg:text-right">
-      &copy; 2024 - Todos los derechos reservados - Desarrollado por <a class="hover:underline" href="https://benjamibono.dev" target="_blank" rel="noopener noreferrer">Benjami Bono</a>
+      &copy; 2024 - Todos los derechos reservados - Desarrollado por <a
+        class="hover:underline"
+        href="https://benjamibono.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visita la web del desarrollador Benjami Bono"
+      >
+        Benjami Bono
+      </a>
     </p>
   </div>
 </footer>

@@ -1,23 +1,91 @@
+---
+import { Image } from "astro:assets";
+import thai1 from "../images/thai1.webp";
+import thai2 from "../images/thai2.webp";
+import thai3 from "../images/thai3.webp";
+import ej1 from "../images/ej1.webp";
+import ej4 from "../images/ej4.webp";
+import ej6 from "../images/ej6.webp";
+
+interface ImageData {
+  src: ImageMetadata;
+  alt: string;
+  width: number;
+  height: number;
+  format: "webp";
+  quality: number;
+}
+
+const images: ImageData[] = [
+  {
+    src: thai1,
+    alt: "Entrenamiento de Muay Thai en el gimnasio",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+  {
+    src: thai2,
+    alt: "Practicantes de Muay Thai en sesión de entrenamiento",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+  {
+    src: thai3,
+    alt: "Técnicas de Muay Thai en acción",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+  {
+    src: ej1,
+    alt: "Ejercicios funcionales en el gimnasio",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+  {
+    src: ej4,
+    alt: "Entrenamiento de fuerza y resistencia",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+  {
+    src: ej6,
+    alt: "Sesión de acondicionamiento físico",
+    width: 800,
+    height: 800,
+    format: "webp",
+    quality: 80,
+  },
+];
+---
+
 <div class="pt-10 xs:pt-20 pb-5 xs:pb-10 px-4 max-w-[1800px] mx-auto">
-  <h3 class="flex justify-center pb-6 font-semibold text-balance text-center md:text-3xl">
+  <h3
+    class="flex justify-center pb-6 font-semibold text-balance text-center md:text-3xl"
+  >
     "La verdadera batalla está en superarte a ti mismo cada día"
   </h3>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
     {
-      [
-        { src: "thai1.JPG" },
-        { src: "thai2.JPG" },
-        { src: "thai3.JPG" },
-        { src: "/ej1.webp" },
-        { src: "/ej4.webp" },
-        { src: "/ej6.webp" },
-      ].map((image) => (
+      images.map((image) => (
         <div class="overflow-hidden rounded-lg">
-          <img
-            class="zoom object-cover w-full h-full"
+          <Image
             src={image.src}
-            decoding="async"
-            loading="lazy"
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            format={image.format}
+            quality={image.quality}
+            class="zoom object-cover w-full h-full"
             style="aspect-ratio: 1 / 1;"
           />
         </div>

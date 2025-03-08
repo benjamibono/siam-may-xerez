@@ -1,7 +1,25 @@
 ---
-const categories = [
-  { title: "Entrenadores", foto: "/entrenadores.webp" },
-  { title: "Luchadores", foto: "/luchadores.webp" },
+import { Image } from "astro:assets";
+import entrenadores from "../images/entrenadores.webp";
+import luchadores from "../images/luchadores.webp";
+
+interface Category {
+  title: string;
+  foto: ImageMetadata;
+  alt: string;
+}
+
+const categories: Category[] = [
+  {
+    title: "Entrenadores",
+    foto: entrenadores,
+    alt: "Entrenador dando instrucciones durante una clase",
+  },
+  {
+    title: "Luchadores",
+    foto: luchadores,
+    alt: "Luchador practicando técnicas de Muay Thai",
+  },
 ];
 ---
 
@@ -12,11 +30,16 @@ const categories = [
         <a
           href={`/${category.title.toLowerCase()}`}
           class="relative flex items-center justify-center text-white text-2xl font-bold rounded-lg uppercase"
+          aria-label={`Ver sección de ${category.title.toLowerCase()}`}
         >
           <div class="overflow-hidden rounded-lg">
-            <img
+            <Image
               src={category.foto}
-              alt={category.title}
+              alt={category.alt}
+              width={800}
+              height={600}
+              format="webp"
+              quality={80}
               class="justify-center object-cover transform transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </div>

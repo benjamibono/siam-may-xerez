@@ -2,32 +2,38 @@
 import Layout from "@/layouts/Layout.astro";
 import Navbar from "@components/NavBar.astro";
 import Footer from "@components/Footer.astro";
+import { Image } from "astro:assets";
+import grimaldi from "../images/grimaldi.webp";
+import rainer from "../images/rainer.webp";
+import cristobal from "../images/cristobal.webp";
+import user from "../images/user.webp";
 
 const luchadores = [
   {
     nombre: "Alvaro 'La Bestia' Grimaldi",
     peso: "Peso Wélter",
-    foto: "/grimaldi.webp",
+    foto: grimaldi,
   },
   {
     nombre: "Gonzalo 'Boneless' Rainer",
     peso: "Peso Ligero",
-    foto: "/rainer.webp",
+    foto: rainer,
   },
   {
     nombre: "Cristóbal 'Ardilla' López",
     peso: "Peso Ligero",
-    foto: "/cristobal.webp",
+    foto: cristobal,
   },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: "/user.png" },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
 ];
 ---
 
@@ -38,13 +44,16 @@ const luchadores = [
     <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-5">
       {
         luchadores.map((luchador) => (
-          <div class=" border border-gray-300 rounded-lg p-2 text-center flex flex-col justify-between">
-            <div class="overflow-hidden">
-              <img
+          <div class="border border-gray-300 rounded-lg p-2 text-center flex flex-col justify-between">
+            <div class="overflow-hidden rounded-lg aspect-[4/5] w-full h-[250px]">
+              <Image
                 src={luchador.foto}
                 alt={luchador.nombre}
-                class="zoom rounded-lg mx-auto object-fill"
-                style="height: 300px;"
+                width={240}
+                height={300}
+                format="webp"
+                quality={80}
+                class="zoom w-full h-full object-cover object-top"
               />
             </div>
             <div class="mt-2">
