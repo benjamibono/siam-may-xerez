@@ -15,48 +15,56 @@ const luchadores = [
     nombre: "Alvaro Grimaldi",
     apodo: "La Bestia",
     peso: "Peso Wélter",
+    record: "1 - 0 - 0",
     foto: grimaldi,
   },
   {
     nombre: "Gonzalo Rainer",
     apodo: "Boneless",
     peso: "Peso Ligero",
+    record: "1 - 0 - 0",
     foto: rainer,
   },
   {
     nombre: "Cristóbal López",
     apodo: "Ardilla",
     peso: "Peso Ligero",
+    record: "",
     foto: cristobal,
   },
   {
     nombre: "Juan Manuel Medel",
     apodo: "El Romano",
     peso: "Peso Wélter",
+    record: "",
     foto: medel,
   },
   {
     nombre: "Daniel Romero",
     apodo: "El Cazador",
     peso: "Peso Wélter",
+    record: "1 - 0 - 0",
     foto: daniel,
   },
   {
     nombre: "",
     apodo: "",
     peso: "",
+    record: "",
     foto: user,
   },
   {
     nombre: "",
     apodo: "",
     peso: "",
+    record: "",
     foto: user,
   },
   {
     nombre: "",
     apodo: "",
     peso: "",
+    record: "",
     foto: user,
   },
 ];
@@ -91,15 +99,20 @@ const luchadores = [
               />
             </div>
             <div class="mt-2">
+              <p class="text-xs sm:text-sm md:text-base font-medium uppercase text-gray-600">
+                {luchador.apodo}
+              </p>
               <h3 class="text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase">
                 {luchador.nombre}
               </h3>
-              <p class="text-xs sm:text-sm md:text-base font-medium uppercase">
-                {luchador.apodo}
-              </p>
               <p class="text-xs sm:text-sm md:text-base text-gray-600">
                 {luchador.peso}
               </p>
+              {luchador.record && (
+                <p class="text-xs sm:text-sm md:text-base font-medium">
+                  {luchador.record}
+                </p>
+              )}
             </div>
           </div>
         ))
