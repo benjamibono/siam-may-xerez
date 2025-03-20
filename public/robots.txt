@@ -2,6 +2,6 @@ User-agent: *
 
 Disallow: /wp-admin/
 
-Host: www.siam-may-thai.vercel.app
+Host: www.siammay.com
 
-Sitemap: http://www.siam-may-thai.vercel.app/sitemap.xml
+Sitemap: http://www.siammay.com/sitemap.xml
