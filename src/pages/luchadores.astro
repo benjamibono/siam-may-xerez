@@ -8,45 +8,77 @@ import rainer from "../images/rainer.webp";
 import cristobal from "../images/cristobal.webp";
 import medel from "../images/medel.webp";
 import daniel from "../images/daniel.webp";
-
 import user from "../images/user.webp";
 
 const luchadores = [
   {
-    nombre: "Alvaro 'La Bestia' Grimaldi",
+    nombre: "Alvaro Grimaldi",
+    apodo: "La Bestia",
     peso: "Peso Wélter",
     foto: grimaldi,
   },
   {
-    nombre: "Gonzalo 'Boneless' Rainer",
+    nombre: "Gonzalo Rainer",
+    apodo: "Boneless",
     peso: "Peso Ligero",
     foto: rainer,
   },
   {
-    nombre: "Cristóbal 'Ardilla' López",
+    nombre: "Cristóbal López",
+    apodo: "Ardilla",
     peso: "Peso Ligero",
     foto: cristobal,
   },
   {
-    nombre: "Juan Manuel 'El Romano'  Medel",
+    nombre: "Juan Manuel Medel",
+    apodo: "El Romano",
     peso: "Peso Wélter",
     foto: medel,
   },
-  { nombre: "Daniel 'El Cazador' Romero", peso: "Peso Wélter", foto: daniel },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
-  { nombre: "Nombre 'Apodo' Apellido", peso: "Peso ?", foto: user },
+  {
+    nombre: "Daniel Romero",
+    apodo: "El Cazador",
+    peso: "Peso Wélter",
+    foto: daniel,
+  },
+  {
+    nombre: "",
+    apodo: "",
+    peso: "",
+    foto: user,
+  },
+  {
+    nombre: "",
+    apodo: "",
+    peso: "",
+    foto: user,
+  },
+  {
+    nombre: "",
+    apodo: "",
+    peso: "",
+    foto: user,
+  },
 ];
 ---
 
 <Layout title="Siam May Xerez | Gimnasio de Muay Thai y MMA en Jerez">
   <Navbar />
 
-  <section class="p-5">
-    <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-5">
+  <section class="p-5 bg-gray-100">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+        Nuestros Luchadores
+      </h1>
+      <p class="text-gray-600 text-base md:text-lg text-balance">
+        Descubre la fuerza emergente de nuestros talentosos luchadores amateurs,
+        quienes se preparan para dejar su marca en el mundo del Muay Thai y MMA.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
       {
         luchadores.map((luchador) => (
-          <div class="border border-gray-300 rounded-lg p-2 text-center flex flex-col justify-between">
+          <div class="border border-gray-300 rounded-3xl shadow-lg p-2 text-center flex flex-col justify-between bg-white">
             <div class="overflow-hidden rounded-lg aspect-[3/4] w-full">
               <Image
                 src={luchador.foto}
@@ -59,8 +91,15 @@ const luchadores = [
               />
             </div>
             <div class="mt-2">
-              <h3 class="text-lg font-semibold">{luchador.nombre}</h3>
-              <p class="text-gray-600">{luchador.peso}</p>
+              <h3 class="text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase">
+                {luchador.nombre}
+              </h3>
+              <p class="text-xs sm:text-sm md:text-base font-medium uppercase">
+                {luchador.apodo}
+              </p>
+              <p class="text-xs sm:text-sm md:text-base text-gray-600">
+                {luchador.peso}
+              </p>
             </div>
           </div>
         ))
@@ -72,7 +111,7 @@ const luchadores = [
 
 <style>
   img {
-    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
   }
   /* 
   img:hover {
