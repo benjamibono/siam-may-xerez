@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import logo from "../../public/logo.webp";
 import mma from "../../public/MMA2.webp";
 ---
 
@@ -11,7 +10,7 @@ import mma from "../../public/MMA2.webp";
   <div class="flex mx-auto space-x-2">
     <a href="/">
       <Image
-        class="xs:transition xs:hover:scale-110 animate-tilt w-[120px] py-2 rounded-full"
+        class="xs:transition xs:hover:scale-110 animate-tilt w-[80px] md:w-[100px] py-1 md:py-2 rounded-full"
         src={mma}
         alt="Logo Siam May Xerez | Muay Thai"
         width={120}
@@ -20,19 +19,10 @@ import mma from "../../public/MMA2.webp";
         quality={100}
       />
     </a>
-    <!--
-    <Image
-      class="xs:transition xs:hover:scale-110 animate-tilt w-24 md:w-20"
-      src={mma}
-      alt="Logo MMA"
-      width={80}
-      height={80}
-      format="webp"
-      quality={80}
-    />
-    -->
   </div>
-  <ul class="text-white space-x-6 lg:space-x-10 mx-auto hidden md:flex">
+  <ul
+    class="text-white space-x-4 lg:space-x-10 mx-auto hidden md:flex text-sm lg:text-base"
+  >
     <li class="transition hover:text-red-500"><a href="/">Inicio</a></li>
     <li class="transition hover:text-red-500">
       <a href="/nosotros">Conócenos</a>
@@ -51,13 +41,13 @@ import mma from "../../public/MMA2.webp";
     </li>
   </ul>
   <button
-    class="block rounded bg-black p-2.5 text-white transition md:hidden"
+    class="block rounded bg-black p-2 text-white transition md:hidden"
     onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
   >
     <span class="sr-only">Toggle menu</span>
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="size-5"
+      class="size-4"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
