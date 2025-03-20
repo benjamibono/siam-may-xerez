@@ -3,39 +3,60 @@ import Layout from "@/layouts/Layout.astro";
 import Navbar from "@components/NavBar.astro";
 import Footer from "@components/Footer.astro";
 import { Image } from "astro:assets";
-import rodtang from "../images/rodtang.webp";
+import may from "../images/may.webp";
+import rocky from "../images/rocky.webp";
 
 const entrenadores = [
-  { nombre: "May", peso: "Muay Thai", foto: rodtang, link: "/may" },
-  { nombre: "Rocky", peso: "MMA", foto: rodtang, link: "/rocky" },
+  { nombre: "May", peso: "Muay Thai", foto: may, link: "/may" },
+  { nombre: "Rocky", peso: "MMA", foto: rocky, link: "/rocky" },
 ];
 ---
 
-<Layout title="Siam May Xerez | Gimnasio de Muay Thai en Jerez">
+<Layout title="Siam May Xerez | Gimnasio de Muay Thai y MMA en Jerez">
   <Navbar />
-  <section class="min-h-dvh">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-      {
-        entrenadores.map((entrenador) => (
-          <a
-            href={entrenador.link}
-            class="border border-gray-300 rounded-lg p-4 text-center block"
-          >
-            <Image
-              src={entrenador.foto}
-              alt={entrenador.nombre}
-              width={800}
-              height={800}
-              format="webp"
-              quality={80}
-              class="w-full rounded-lg"
-            />
-            <h3 class="mt-2 text-lg font-semibold">{entrenador.nombre}</h3>
-            <p class="text-gray-600">{entrenador.peso}</p>
-          </a>
-        ))
-      }
-    </div>
-  </section>
+  <main class="flex-grow bg-gray-100">
+    <section class="py-12 px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {
+          entrenadores.map((entrenador) => (
+            <a
+              href={entrenador.link}
+              class="border border-gray-300 rounded-lg p-4 text-center block"
+            >
+              <Image
+                src={entrenador.foto}
+                alt={entrenador.nombre}
+                width={800}
+                height={800}
+                format="webp"
+                quality={80}
+                class="w-full rounded-lg zoom py-12"
+              />
+              <h3 class="mt-2 text-lg font-semibold">{entrenador.nombre}</h3>
+              <p class="text-gray-600">{entrenador.peso}</p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
   <Footer />
 </Layout>
+<style>
+  img {
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.8));
+  }
+  /* 
+  img:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  */
+  .zoom {
+    transition: all 0.5s ease;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1);
+  }
+</style>
