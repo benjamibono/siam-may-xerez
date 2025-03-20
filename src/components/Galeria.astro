@@ -12,9 +12,6 @@ import primos2 from "../images/primos.webp";
 import maymedel from "../images/may-medel.webp";
 import mayardilla from "../images/may-ardilla.webp";
 
-
-
-
 interface ImageData {
   src: ImageMetadata;
   alt: string;
@@ -76,16 +73,16 @@ const images: ImageData[] = [
 ];
 ---
 
-<div class="pt-10 xs:pt-20 pb-5 xs:pb-10 px-4 max-w-[1800px] mx-auto">
+<div class="m-4">
   <h3
     class="flex justify-center pb-6 font-semibold text-balance text-center md:text-3xl"
   >
     "La verdadera batalla está en superarte a ti mismo cada día"
   </h3>
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-1">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-6">
     {
       images.map((image) => (
-        <div class="overflow-hidden rounded-3xl">
+        <div class="overflow-hidden rounded-3xl aspect-square">
           <Image
             src={image.src}
             alt={image.alt}
@@ -93,8 +90,7 @@ const images: ImageData[] = [
             height={image.height}
             format={image.format}
             quality={image.quality}
-            class="zoom object-cover w-full h-full"
-            style="aspect-ratio: 1 / 1;"
+            class="w-full h-full object-cover transform transition-transform duration-300 ease-in-out hover:scale-105"
           />
         </div>
       ))
@@ -103,11 +99,7 @@ const images: ImageData[] = [
 </div>
 
 <style>
-  .zoom {
-    transition: all 0.5s ease;
-  }
-
-  .zoom:hover {
-    transform: scale(1.1);
+  img {
+    cursor: url("/cursor.png"), auto;
   }
 </style>
