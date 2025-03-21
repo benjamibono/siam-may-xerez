@@ -8,6 +8,8 @@ import rainer from "../images/rainer.webp";
 import cristobal from "../images/cristobal.webp";
 import medel from "../images/medel.webp";
 import daniel from "../images/daniel.webp";
+import larissa from "../images/larissa.webp";
+import kinoa from "../images/kinoa.webp";
 import user from "../images/user.webp";
 
 const luchadores = [
@@ -21,7 +23,7 @@ const luchadores = [
   {
     nombre: "Gonzalo Rainer",
     apodo: "Boneless",
-    peso: "Peso Ligero",
+    peso: "Peso Pluma",
     record: "1 - 0 - 0",
     foto: rainer,
   },
@@ -47,18 +49,18 @@ const luchadores = [
     foto: daniel,
   },
   {
-    nombre: "",
+    nombre: "Larissa Peshkova",
     apodo: "",
-    peso: "",
+    peso: "Peso Paja",
     record: "",
-    foto: user,
+    foto: larissa,
   },
   {
-    nombre: "",
-    apodo: "",
-    peso: "",
-    record: "",
-    foto: user,
+    nombre: "Joaquín Lechuga",
+    apodo: "El Galgo",
+    peso: "Peso Ligero",
+    record: "2 - 0 - 0",
+    foto: kinoa,
   },
   {
     nombre: "",
@@ -100,7 +102,7 @@ const luchadores = [
             </div>
             <div class="mt-2">
               <p class="text-xs sm:text-sm md:text-base font-medium uppercase text-gray-600">
-                {luchador.apodo}
+                {luchador.apodo || "\u00A0"}
               </p>
               <h3 class="text-xs sm:text-sm md:text-base lg:text-lg font-semibold uppercase">
                 {luchador.nombre}
@@ -108,11 +110,9 @@ const luchadores = [
               <p class="text-xs sm:text-sm md:text-base text-gray-600">
                 {luchador.peso}
               </p>
-              {luchador.record && (
-                <p class="text-xs sm:text-sm md:text-base font-medium">
-                  {luchador.record}
-                </p>
-              )}
+              <p class="text-xs sm:text-sm md:text-base font-medium">
+                {luchador.record || "\u00A0"}
+              </p>
             </div>
           </div>
         ))
