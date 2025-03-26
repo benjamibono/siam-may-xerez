@@ -13,8 +13,8 @@ const words = [
 ];
 ---
 
-<div class="carousel pt-10">
-  <div class="carousel-track py-10 text-xl uppercase">
+<div class="carousel pt-5 md:pt-10">
+  <div class="carousel-track py-5 md:py-10 text-xl uppercase">
     {words.map((word) => <div class="carousel-item">{word}</div>)}
     {words.map((word) => <div class="carousel-item">{word}</div>)}
   </div>
@@ -38,8 +38,14 @@ const words = [
     padding: 0 1vw;
     text-align: center;
     margin-right: 2vw;
-    font-size: 4rem; /* Tamaño de letra grande */
-    font-weight: bold; /* Negrita */
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-item {
+      font-size: 4rem;
+    }
   }
 
   @keyframes scroll {
@@ -47,7 +53,6 @@ const words = [
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% - 2vw * {words.length}));
       transform: translateX(-100%);
     }
   }

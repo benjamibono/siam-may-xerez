@@ -30,17 +30,17 @@ const categories: Category[] = [
         <div class="w-full md:w-1/2">
           <a
             href={`/${category.title.toLowerCase()}`}
-            class="relative flex items-center justify-center text-white text-2xl font-bold rounded-lg uppercase"
+            class="relative flex items-center justify-center text-white text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl font-bold rounded-lg uppercase"
             aria-label={`Ver sección de ${category.title.toLowerCase()}`}
           >
             <div class="overflow-hidden rounded-3xl w-full h-full">
               <Image
                 src={category.foto}
                 alt={category.alt}
-                width={800}
-                height={600}
+                width={2560}
+                height={1440}
                 format="webp"
-                quality={80}
+                quality={90}
                 class="w-full h-full justify-center object-cover transform transition-transform duration-300 ease-in-out hover:scale-105"
               />
             </div>
